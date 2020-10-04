@@ -4,11 +4,12 @@ import User from "./components/User";
 import "./App.css";
 import Modal from "react-modal";
 import AddUser from "./components/AddUser";
+Modal.setAppElement("#root");
 
 const App = () => {
   const [users, setUsers] = useState([]);
   const [search, setSearch] = useState("");
-  const [visible, setVisible] = useState("");
+  const [visible, setVisible] = useState(false);
 
   const userEkle = (yeni) => {
     axios
@@ -57,7 +58,7 @@ const App = () => {
         placeholder="Isme göre arayın..."
       />
       <div className="yeni_kullanıcı">
-        <button onClick={() => setVisible(true)}>Kullanıcı Ekle</button>
+        <button onClick={() => setVisible(true)}> Yeni Kullanıcı Ekle</button>
       </div>
       <Modal
         isOpen={visible}
@@ -71,6 +72,8 @@ const App = () => {
             width: 500,
             height: 500,
             margin: "auto",
+            background: "darkbrown",
+            borderRadius: 30,
           },
         }}
       >

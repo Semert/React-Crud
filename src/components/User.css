@@ -1,6 +1,5 @@
 .user {
   display: flex;
-  margin-top: 15px;
   justify-content: center;
   align-items: center;
 }
@@ -13,10 +12,17 @@
   border-radius: 50%;
   margin-right: 15px;
 }
-.container {
-}
 
 .first-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 25px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-weight: 900;
+  border: 1px solid white;
+  padding: 9px;
+  border-radius: 12px;
 }
 .size {
   display: flex;
@@ -29,10 +35,10 @@
   align-items: center;
   height: 100%;
 }
-.modal-button {
-  height: 30px;
-  width: 70px;
-  background-color: rgba(255, 208, 0, 0.856);
+.modal_button {
+  height: 40px;
+  width: 80px;
+  background-color: rgba(240, 196, 1, 0.966);
   color: black;
   font-weight: bolder;
   margin: 15px;
@@ -40,22 +46,22 @@
   border-radius: 7px;
 }
 
-.modal-button:hover {
-  background-color: #599e18;
+.modal_button:hover {
+  background-color: #4d0f94;
   color: white;
 }
 
-.modal-button-delete {
-  height: 30px;
-  width: 70px;
-  background-color: rgba(255, 0, 0, 0.856);
-  color: black;
+.modal_button_delete {
+  height: 40px;
+  width: 80px;
+  background-color: rgba(202, 9, 9, 0.911);
+  color: white;
   font-weight: bolder;
   transition-duration: 0.4s;
   border-radius: 7px;
 }
 
-.modal-button-delete:hover {
+.modal_button_delete:hover {
   background-color: #f30c0c;
   color: white;
 }

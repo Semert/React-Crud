@@ -4,23 +4,23 @@ import "./User.css";
 import Modal from "react-modal";
 import UserHandler from "./UserHandler";
 
+Modal.setAppElement("#root");
 const User = ({ user, userEkle, userSil, userEdit, index }) => {
   const { id, email, first_name, last_name, avatar } = user;
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [visible, setVisible] = useState(false);
-
-  /*<button onClick={() => userEkle(a)}>Ekle</button>*/
-  /*
-  <Form
-  id={id}
-  userEkle={userEkle}
-  userSil={userSil}
-  userEdit={userEdit}
-></Form>
-<div className="first-row">{index == 0 && "first name"}</div>
-*/
   return (
     <>
+      {index == 0 && (
+        <>
+          <div className="first-row">
+            {" "}
+            <div>Avatar </div> <div>Ad-Soyad </div> <div> Email</div>{" "}
+            <div></div> <div style={{ marginRight: 30 }}> Aksiyonlar </div>{" "}
+          </div>
+        </>
+      )}
+
       <div className="size">
         <div className="user">
           <div className="user_avatar">
@@ -38,7 +38,7 @@ const User = ({ user, userEkle, userSil, userEdit, index }) => {
           <hr style={{ height: 30 }}></hr>
           <div className="user_düzenle">
             <button
-              className="modal-button"
+              className="modal_button"
               onClick={() => setModalIsOpen(true)}
             >
               Düzenle
@@ -46,7 +46,7 @@ const User = ({ user, userEkle, userSil, userEdit, index }) => {
           </div>
           <div className="user_sil">
             <button
-              className="modal-button-delete"
+              className="modal_button_delete"
               onClick={() => setVisible((prev) => !prev)}
             >
               Sil
@@ -66,6 +66,8 @@ const User = ({ user, userEkle, userSil, userEdit, index }) => {
               width: 500,
               height: 500,
               margin: "auto",
+              background: "darkbrown",
+              borderRadius: 30,
             },
           }}
         >
@@ -73,17 +75,12 @@ const User = ({ user, userEkle, userSil, userEdit, index }) => {
           <div className="form">
             <Form
               id={id}
+              user={user}
               userEkle={userEkle}
               userSil={userSil}
               userEdit={userEdit}
             ></Form>
           </div>
-          <button
-            style={{ width: "100px", height: "50px" }}
-            onClick={() => setModalIsOpen(false)}
-          >
-            Kapat
-          </button>
         </Modal>
       </div>
       <div className="deneme">

@@ -1,17 +1,16 @@
 import React, { useState } from "react";
 import "./Form.css";
 
-const initial_state = {
-  id: (Math.random() * 100).toFixed(2),
-  email: "",
-  first_name: "",
-  last_name: "",
-  avatar: "",
-};
-
-const Form = ({ userEkle, userSil, userEdit, id }) => {
+const Form = ({ userEkle, userSil, userEdit, id, user }) => {
+  const initial_state = {
+    id: (Math.random() * 100).toFixed(2),
+    email: user.email,
+    first_name: user.first_name,
+    last_name: user.last_name,
+    avatar: user.avatar,
+  };
   const [kullanıcı, setKullanıcı] = useState(initial_state);
-
+  console.log(user);
   const handleUser = (e) => {
     setKullanıcı({ ...kullanıcı, [e.target.name]: e.target.value });
   };
@@ -42,10 +41,7 @@ const Form = ({ userEkle, userSil, userEdit, id }) => {
         onChange={handleUser}
         placeholder="Soy ad"
       ></input>
-      <div className="button">
-        <div style={{ margin: "5px" }} className="button_sil">
-          <button onClick={() => userSil(id)}>Sil</button>
-        </div>
+      <div>
         <div style={{ margin: "5px" }} className="button_edit">
           <button onClick={() => userEdit(id, kullanıcı)}>Düzenle</button>
         </div>
