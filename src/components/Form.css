@@ -1,0 +1,17 @@
+.inputs {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  align-items: center;
+  justify-content: center;
+}
+
+.inputs > input {
+  padding: 5px;
+  margin: 5px;
+}
+
+.inputs > button {
+  margin: 5px;
+  padding: 3px;
+}

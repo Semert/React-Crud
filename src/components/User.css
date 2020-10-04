@@ -1,0 +1,61 @@
+.user {
+  display: flex;
+  margin-top: 15px;
+  justify-content: center;
+  align-items: center;
+}
+.user > p {
+  margin: 5px;
+  padding: 5px;
+}
+.user > img {
+  object-fit: contain;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+.container {
+}
+
+.first-row {
+}
+.size {
+  display: flex;
+  border-bottom: 1px solid white;
+  padding: 30px;
+}
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.modal-button {
+  height: 30px;
+  width: 70px;
+  background-color: rgba(255, 208, 0, 0.856);
+  color: black;
+  font-weight: 800;
+  margin: 15px;
+  transition-duration: 0.4s;
+  border-radius: 7px;
+}
+
+.modal-button:hover {
+  background-color: #818181; /* Green */
+  color: white;
+}
+
+.modal-button-delete {
+  height: 30px;
+  width: 70px;
+  background-color: rgba(255, 0, 0, 0.856);
+  color: black;
+  font-weight: 800;
+  transition-duration: 0.4s;
+  border-radius: 7px;
+}
+
+.modal-button-delete:hover {
+  background-color: #818181; /* Green */
+  color: white;
+}
