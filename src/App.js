@@ -2,10 +2,13 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import User from "./components/User";
 import "./App.css";
+import Modal from "react-modal";
+import AddUser from "./components/AddUser";
 
 const App = () => {
   const [users, setUsers] = useState([]);
   const [search, setSearch] = useState("");
+  const [visible, setVisible] = useState("");
 
   const userEkle = (yeni) => {
     axios
@@ -14,6 +17,7 @@ const App = () => {
       .catch((error) => console.log(error));
     const newuser = [...users, yeni];
     setUsers(newuser);
+    setVisible(false);
   };
 
   const userSil = (id) => {
@@ -52,6 +56,26 @@ const App = () => {
         onChange={(e) => setSearch(e.target.value)}
         placeholder="Isme göre arayın..."
       />
+      <div className="yeni_kullanıcı">
+        <button onClick={() => setVisible(true)}>Kullanıcı Ekle</button>
+      </div>
+      <Modal
+        isOpen={visible}
+        onRequestClose={() => setVisible(false)}
+        style={{
+          overlay: {
+            backgroundColor: "gray",
+          },
+          content: {
+            color: "orange",
+            width: 500,
+            height: 500,
+            margin: "auto",
+          },
+        }}
+      >
+        <AddUser userEkle={userEkle} />
+      </Modal>
       <div className="container">
         {filteredUsers.map((user, index) => (
           <User

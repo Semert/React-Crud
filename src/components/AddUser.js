@@ -1,19 +1,23 @@
 import React, { useState } from "react";
-import "./Form.css";
+import "./AddUser.css";
 
-const initial_state = {
-  id: (Math.random() * 100).toFixed(2),
-  email: "",
+const initialState = {
   first_name: "",
   last_name: "",
-  avatar: "",
+  email: "",
+  avatar: "https://picsum.photos/135",
 };
 
-const Form = ({ userEkle, userSil, userEdit, id }) => {
-  const [kullanıcı, setKullanıcı] = useState(initial_state);
+const AddUser = ({ userEkle }) => {
+  const [kullanıcı, setKullanıcı] = useState(initialState);
 
   const handleUser = (e) => {
     setKullanıcı({ ...kullanıcı, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    userEkle(kullanıcı);
   };
 
   return (
@@ -43,15 +47,14 @@ const Form = ({ userEkle, userSil, userEdit, id }) => {
         placeholder="Soy ad"
       ></input>
       <div className="button">
-        <div style={{ margin: "5px" }} className="button_sil">
-          <button onClick={() => userSil(id)}>Sil</button>
-        </div>
-        <div style={{ margin: "5px" }} className="button_edit">
-          <button onClick={() => userEdit(id, kullanıcı)}>Düzenle</button>
+        <div className="button_submit" style={{ margin: "5px" }}>
+          <button type="submit" onClick={handleSubmit}>
+            Kaydet
+          </button>
         </div>
       </div>
     </div>
   );
 };
 
-export default Form;
+export default AddUser;
