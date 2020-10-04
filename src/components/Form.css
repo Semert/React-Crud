@@ -1,17 +1,72 @@
 .inputs {
   display: flex;
+
+  border-radius: 5%;
   flex-direction: column;
   width: 300px;
   align-items: center;
   justify-content: center;
+  margin: auto;
+  padding: auto;
 }
 
 .inputs > input {
-  padding: 5px;
+  padding: 7px;
   margin: 5px;
+  margin-top: 5px;
 }
 
 .inputs > button {
-  margin: 5px;
+  margin: 7px;
   padding: 3px;
+  margin-top: 5px;
+}
+
+.label {
+  font-weight: bolder;
+  font-size: 18px;
+  margin: 5px;
+}
+
+.button {
+  margin-top: 5px;
+}
+
+.button_submit > button {
+  width: 80px;
+  height: 30px;
+  background-color: green;
+  font-weight: bolder;
+  border-radius: 2px;
+}
+
+.button_edit > button {
+  width: 80px;
+  height: 30px;
+  background-color: darkorchid;
+  font-weight: bolder;
+  border-radius: 2px;
+}
+
+.button_sil > button {
+  width: 80px;
+  height: 30px;
+  background-color: darkred;
+  font-weight: bolder;
+  border-radius: 2px;
+}
+
+.button_submit > button:hover {
+  background-color: #052e0c;
+  color: white;
+}
+
+.button_edit > button:hover {
+  background-color: #2a053b;
+  color: white;
+}
+
+.button_sil > button:hover {
+  background-color: #f31717;
+  color: white;
 }

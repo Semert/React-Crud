@@ -34,14 +34,14 @@
   width: 70px;
   background-color: rgba(255, 208, 0, 0.856);
   color: black;
-  font-weight: 800;
+  font-weight: bolder;
   margin: 15px;
   transition-duration: 0.4s;
   border-radius: 7px;
 }
 
 .modal-button:hover {
-  background-color: #818181; /* Green */
+  background-color: #599e18;
   color: white;
 }
 
@@ -50,12 +50,42 @@
   width: 70px;
   background-color: rgba(255, 0, 0, 0.856);
   color: black;
-  font-weight: 800;
+  font-weight: bolder;
   transition-duration: 0.4s;
   border-radius: 7px;
 }
 
 .modal-button-delete:hover {
-  background-color: #818181; /* Green */
+  background-color: #f30c0c;
   color: white;
+}
+
+.user_avatar > img {
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+.user_lastname {
+  width: 100px;
+  padding: 25px;
+}
+.user_email {
+  width: 250px;
+  padding: 25px;
+}
+.user_firstname {
+  width: 100px;
+  padding: 25px;
+  font-weight: bolder;
+  font-size: larger;
+}
+
+.user_düzenle {
+  width: 120px;
+  padding: 25px;
+}
+
+.user_sil {
+  width: 120px;
+  padding: 25px;
 }

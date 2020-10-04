@@ -50,6 +50,7 @@ const App = () => {
         type="text"
         value={search}
         onChange={(e) => setSearch(e.target.value)}
+        placeholder="Isme göre arayın..."
       />
       <div className="container">
         {filteredUsers.map((user, index) => (

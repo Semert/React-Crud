@@ -1,7 +1,50 @@
 .user-handler {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 300px;
-  width: 300px;
+  height: 100%;
+  width: 100%;
+  margin: auto;
+  margin: 5px;
+}
+
+.user-handler > p {
+  font-weight: bolder;
+}
+
+.user-handler > button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+  height: 50px;
+  width: 100px;
+  background-color: darkred;
+  color: white;
+  font-weight: bolder;
+  font-size: 18px;
+  border-radius: 5px;
+}
+
+.user-handler > button:hover {
+  background-color: #f80808;
+  color: white;
+}
+
+.user-handler > div {
+  padding: 5px;
+}
+
+.user-handler > div > button {
+  width: 90px;
+  height: 35px;
+  font-weight: bolder;
+  font-size: 15px;
+  background-color: chocolate;
+}
+
+.user-handler > div > button:hover {
+  background-color: #0ca80c;
+  color: white;
 }

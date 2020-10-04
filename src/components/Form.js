@@ -22,38 +22,43 @@ const Form = ({ userEkle, userSil, userEdit, id }) => {
   };
   return (
     <div className="inputs">
+      <label className="label">Email</label>
       <input
         type="text"
         name="email"
         value={kullanıcı.email}
         onChange={handleUser}
+        placeholder="Email"
       ></input>
-
+      <label className="label">Ad</label>
       <input
         type="text"
         name="first_name"
         value={kullanıcı.first_name}
         onChange={handleUser}
+        placeholder="Ad"
       ></input>
-
+      <label className="label">Soy Ad</label>
       <input
         type="text"
         name="last_name"
         value={kullanıcı.last_name}
         onChange={handleUser}
+        placeholder="Soy ad"
       ></input>
-
-      <input
-        type="text"
-        name="avatar"
-        value={kullanıcı.avatar}
-        onChange={handleUser}
-      ></input>
-      <button type="submit" onClick={handleSubmit}>
-        haha
-      </button>
-      <button onClick={() => userSil(id)}>Sil</button>
-      <button onClick={() => userEdit(id, kullanıcı)}>Düzenle</button>
+      <div className="button">
+        <div className="button_submit" style={{ margin: "5px" }}>
+          <button type="submit" onClick={handleSubmit}>
+            Kaydet
+          </button>
+        </div>
+        <div style={{ margin: "5px" }} className="button_sil">
+          <button onClick={() => userSil(id)}>Sil</button>
+        </div>
+        <div style={{ margin: "5px" }} className="button_edit">
+          <button onClick={() => userEdit(id, kullanıcı)}>Düzenle</button>
+        </div>
+      </div>
     </div>
   );
 };

@@ -23,23 +23,35 @@ const User = ({ user, userEkle, userSil, userEdit, index }) => {
     <>
       <div className="size">
         <div className="user">
-          <img src={avatar} alt={first_name} />
-          <hr style={{ height: 30, opacity: 0.5 }}></hr>
-          <p> {first_name}</p>
-          <hr style={{ height: 30, opacity: 0.5 }}></hr>
-          <p> {last_name}</p>
-          <hr style={{ height: 30, opacity: 0.5 }}></hr>
-          <p>{email}</p>
+          <div className="user_avatar">
+            <img src={avatar} alt={first_name} />
+          </div>
+          <div className="user_firstname">
+            <p> {first_name}</p>
+          </div>
+          <div className="user_lastname">
+            <p> {last_name}</p>
+          </div>
+          <div className="user_email">
+            <p>{email}</p>
+          </div>
           <hr style={{ height: 30 }}></hr>
-          <button className="modal-button" onClick={() => setModalIsOpen(true)}>
-            Düzenle
-          </button>
-          <button
-            className="modal-button-delete"
-            onClick={() => setVisible((prev) => !prev)}
-          >
-            Sil
-          </button>
+          <div className="user_düzenle">
+            <button
+              className="modal-button"
+              onClick={() => setModalIsOpen(true)}
+            >
+              Düzenle
+            </button>
+          </div>
+          <div className="user_sil">
+            <button
+              className="modal-button-delete"
+              onClick={() => setVisible((prev) => !prev)}
+            >
+              Sil
+            </button>
+          </div>
         </div>
 
         <Modal
@@ -66,7 +78,12 @@ const User = ({ user, userEkle, userSil, userEdit, index }) => {
               userEdit={userEdit}
             ></Form>
           </div>
-          <button onClick={() => setModalIsOpen(false)}>Kapat</button>
+          <button
+            style={{ width: "100px", height: "50px" }}
+            onClick={() => setModalIsOpen(false)}
+          >
+            Kapat
+          </button>
         </Modal>
       </div>
       <div className="deneme">
@@ -79,16 +96,19 @@ const User = ({ user, userEkle, userSil, userEdit, index }) => {
             },
             content: {
               color: "orange",
+              background: "darkbrown",
               width: 400,
               height: 400,
               margin: "auto",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
             },
           }}
         >
           {" "}
           <div style={{ width: 300, height: 300 }}>
-            <p>Are you sure</p>
-            <UserHandler userSil={userSil} id={id} />
+            <UserHandler userSil={userSil} id={id} setVisible={setVisible} />
           </div>
         </Modal>
       </div>

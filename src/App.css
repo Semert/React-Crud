@@ -34,6 +34,8 @@
 
 .search::placeholder {
   color: #e2e2e2;
+  padding: 5px;
+  font-weight: 400;
 }
 .container {
   display: flex;
